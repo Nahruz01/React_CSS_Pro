@@ -1,0 +1,27 @@
+CHECK INSTALLATION
+node -v
+/////////////////
+
+
+npm create vite@latest frontend-pro-i-pantun
+////////
+
+Pick:
+framework: React
+variant: Javascript
+rolldown: No
+/////////////
+
+npm install tailwindcss @tailwindcss/cli
+////////////
+
+#/src/index.css
+@import "tailwindcss";
+/////////////
+
+
+cd into project folder frontend-pro-i-pantun
+run npm dev
+
+or just keep opening the file directly to frontend-pro-i-pantun
+///////////
