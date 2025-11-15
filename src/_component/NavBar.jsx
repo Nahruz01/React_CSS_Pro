@@ -1,5 +1,5 @@
 // src/_component/NavBar.jsx
-import { Link, useLocation } from "react-router-dom";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -18,9 +18,13 @@ export default function Navbar() {
 }
 
 function CustomLink({ to, children }) {
-  const location = useLocation();
+  // Resolve the path relative to current location
+  const resolved = useResolvedPath(to);
+  // Match the resolved path exactly
+  const match = useMatch({ path: resolved.pathname, end: true });
+
   return (
-    <li className={location.pathname === to ? "active" : ""}>
+    <li className={match ? "active" : ""}>
       <Link to={to}>{children}</Link>
     </li>
   );

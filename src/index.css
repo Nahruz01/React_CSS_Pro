@@ -43,9 +43,13 @@ body {
   padding: .25rem;
 }
 
-.nav li:active {
-  background-color: #555;
+/* Add this at the bottom of src/index.css */
+
+.nav li.active {
+  background-color: #2082a8; /* “sunk” color for the current page */
+  border-radius: 0.25rem; /* optional for rounded edges */
 }
+
 
 .nav li:hover {
   background-color: #777;
