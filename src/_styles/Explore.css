@@ -1,0 +1,49 @@
+.Explore_Frame {
+    background-color: #e0f7fa;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    padding: 0.5rem;
+    flex: 5;
+    color: rgb(0, 0, 0);
+}
+
+.Explore_LeftBar {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.Explore_CenterCard {
+    background-color: #ffffff;
+    flex: 4;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+.Explore_RightBar {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.Post_Card {
+    background-color: #f1f8e9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.Post_Content {
+    background-color: #ffffff;
+    padding: 2%;
+    margin-bottom: 0.5rem;
+}
+
+.Post_Buttons {
+    background-color: #81c784;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

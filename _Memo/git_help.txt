@@ -18,7 +18,9 @@ git add .
 git commit -m "Setup basic React routing structure"
 
 
-git push -u origin feature/router
+git push -u origin feature/router_test
+
+git checkout feature/router_test
 
 
 1️⃣ Repository setup

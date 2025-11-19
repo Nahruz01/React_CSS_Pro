@@ -6,6 +6,12 @@ import About from "./_pages/About.jsx";
 import Explore from "./_pages/Explore.jsx";
 import PantunPen from "./_pages/PantunPen.jsx";
 
+import PantunLayout from "./_layouts/PantunLayout.jsx";
+
+import Rater from "./_pages/PantunRater.jsx";
+import Rhymer from "./_pages/PantunRhymer.jsx";
+import Class from "./_pages/PantunClass.jsx";
+
 export default function App() {
   return (
     <>
@@ -13,8 +19,15 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Explore" element={<Explore />} />
-        <Route path="/PantunPen" element={<PantunPen />} />
+
+        // Look at the end is not end fragment
+        <Route path="/Explore" element={<Explore />} > //here
+        </Route>
+        <Route path="/PantunPen" element={<PantunPen />} >
+          <Route path="Rater" element={<Rater />} />
+          <Route path="Rhymer" element={<Rhymer />} />
+          <Route path="Class" element={<Class />} />
+        </Route>
       </Routes>
     </>
   );
