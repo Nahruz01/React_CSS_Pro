@@ -90,12 +90,11 @@ const handlePantunSubmit = async () => {
 
 
         <div className="PantunPen_SideNav">
-        <>Navigation Test</>
         <nav>
           <ul>
           <CustomLink to="Rater">Rater</CustomLink>
           <CustomLink to="Rhymer">Rhymer</CustomLink>
-          <CustomLink to="Class">Class</CustomLink>
+          <CustomLink to="Class">Guidelines</CustomLink>
           </ul>
         </nav>
 

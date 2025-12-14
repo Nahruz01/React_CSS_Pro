@@ -1,6 +1,6 @@
 
 .PantunPen_Frame {
-    background-color: aquamarine;
+    background-color: #c2ecf2;
     display: flex;
     flex-direction: row;
     min-height: 100vh;
@@ -10,7 +10,7 @@
     color: rgb(0, 0, 0);
 }
 .PantunPen_Main {
-    background-color: rgb(79, 216, 171);
+    background-color: rgb(162, 223, 202);
     flex: 4;
     padding: 0.5rem;
     border-radius: 6px;
@@ -38,7 +38,7 @@
 }
 
 .PantunPen_SideNav {
-    flex: 2;
+    flex: 3;
     padding: 0.5rem;
     border-radius: 6px;
 }

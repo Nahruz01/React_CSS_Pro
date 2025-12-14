@@ -8,36 +8,37 @@ import { useTranslation } from "react-i18next";
 import "../_styles/Explore.css";
 
 export default function Explore() {
+
+  const samplePosts = Array.from({ length: 20 }, (_, i) => ({
+    id: i + 1,
+    author: "Author " + (i + 1),
+    title: "Pantun Title " + (i + 1),
+    tag: "love",
+    lines: [
+      "Line 1 of pantun...",
+      "Line 2 of pantun...",
+      "Line 3 of pantun...",
+      "Line 4 of pantun..."
+    ]
+  }));
+
   return (
     <div className="Explore_Frame">
-      <nav className="Explore_LeftBar">
-        <ul>
-          <li>My Posts</li>
-          <li>Favourites</li>
-          <li>Categories</li>
-          <li>Notification</li>
-        </ul>
-      </nav>
+      <div className="Explore_LeftBar"> 
+        <nav>
+          <ul>
+            <li><CustomLink to="MyPosts">My Posts</CustomLink></li>
+            <li><CustomLink to="ExploreFeed">Explore Feed</CustomLink></li>
+            <li><CustomLink to="Favourites">Favourites</CustomLink></li>
+            <li><CustomLink to="Categories">Categories</CustomLink></li>
+            <li><CustomLink to="Notifications">Notification</CustomLink></li>
+          </ul>
+        </nav>
+      </div>
+
 
       <div className="Explore_CenterCard">
-        <p>Posts</p>
-
-        <div className="Post_Card">
-          <h4>AuthorName</h4>
-          <div className="Post_Content">
-          <h3>Pantun Title 1</h3>
-          <h3>Tag</h3>
-          <p>Line 1 of the pantun...</p>
-          <p>Line 2 of the pantun...</p>
-          <p>Line 3 of the pantun...</p>
-          <p>Line 4 of the pantun...</p>
-          </div>
-          <div className="Post_Buttons">
-          <button>Like</button>
-          <button>Comment</button>
-          </div>
-        </div>
-
+          <Outlet />
       </div>
 
       <div className="Explore_RightBar">
