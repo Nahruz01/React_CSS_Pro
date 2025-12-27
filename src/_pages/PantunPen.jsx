@@ -4,9 +4,11 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 
 import "../_styles/PantunPen.css";
+import { useAuth } from "../_context/AuthContext.jsx";
 
 import { useTranslation } from "react-i18next";
 export default function PantunPen() {
+  const { user } = useAuth();
 
   const [title, setTitle] = useState("");
   const [lines, setLines] = useState(["", "", "", ""]);
@@ -29,11 +31,16 @@ export default function PantunPen() {
   }
 
 const handlePantunSubmit = async () => {
+  if (!user) {
+    alert("Please log in to submit a pantun.");
+    return; // stop execution
+  }
+
   const pantunData = {
     title: title,
-    tags: tag,          // ✔ MATCHES BACKEND tags follow backend dont change that
-    lines: lines,      // ✔ BACKEND EXPECTS AN ARRAY
-    user_id: 0,
+    tags: tag,          // MATCHES BACKEND tags follow backend dont change that
+    lines: lines,      // ✔ 
+    user_id: user.user_id,
   };
 
   console.log("OUTGOING DATA:", pantunData);

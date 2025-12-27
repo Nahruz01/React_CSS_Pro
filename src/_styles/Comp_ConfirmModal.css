@@ -1,0 +1,77 @@
+/* Reuse existing modal-backdrop and modal-container */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal-container {
+  background: #f1f8e9;
+  width: 420px;
+  max-width: 90%;
+  padding: 24px;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Title and message styling */
+.confirm-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.confirm-message {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Buttons container */
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Buttons styling */
+.confirm-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease;
+}
+
+/* Cancel button */
+.confirm-btn.cancel {
+  background: #81c784;
+  color: white;
+}
+
+.confirm-btn.cancel:hover {
+  background: #a0cea3
+}
+
+/* Danger / confirm button */
+.confirm-btn.danger {
+  background: #b74646;
+  color: white;
+}
+
+.confirm-btn.danger:hover {
+  background: #b71c1c;
+}
+
