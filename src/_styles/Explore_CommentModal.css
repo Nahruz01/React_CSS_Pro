@@ -92,7 +92,7 @@
 
 /* Own comment highlight */
 .comment-item.own-comment {
-  background-color: #e1f5fe; /* light blue for user's own comment */
+ 
   border: 1px solid #81d4fa;
 }
 

@@ -26,11 +26,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="nav">
+
         <Link to="/" className="i-pantun-title">
           I-Pantun
         </Link>
 
-        <ul>
+        <ul className="main-nav">
           <CustomLink to="/">Home</CustomLink>
 
           {isLocked ? (
@@ -57,6 +58,11 @@ export default function Navbar() {
           )}
 
           <CustomLink to="/About">About</CustomLink>
+          
+          {user && user.role === "admin" && (
+            <CustomLink to="/AdminBoard">Admin Board</CustomLink>
+          )}
+
 
           {user && (
             <CustomLink

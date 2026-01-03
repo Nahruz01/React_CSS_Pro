@@ -73,6 +73,24 @@
 
 
 
+/* Pantun Navbar */
+.pantun-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.pantun-nav li.active {
+  background-color: #2082a8;
+  border-radius: 0.25rem;
+}
+
+.pantun-nav li:hover {
+  background-color: #56bac3;
+}
+
 
 
 .pantun-rater-card {
@@ -80,4 +98,15 @@
     border-radius: 6px;
     padding: 1rem;
     margin: 1rem 0;
+}
+
+.PantunPen_ModeSwitch {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.PantunPen_Freeform {
+  width: 100%;
+  resize: vertical;
 }

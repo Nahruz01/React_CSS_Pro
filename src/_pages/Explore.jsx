@@ -9,29 +9,16 @@ import "../_styles/Explore.css";
 
 export default function Explore() {
 
-  const samplePosts = Array.from({ length: 20 }, (_, i) => ({
-    id: i + 1,
-    author: "Author " + (i + 1),
-    title: "Pantun Title " + (i + 1),
-    tag: "love",
-    lines: [
-      "Line 1 of pantun...",
-      "Line 2 of pantun...",
-      "Line 3 of pantun...",
-      "Line 4 of pantun..."
-    ]
-  }));
-
   return (
     <div className="Explore_Frame">
-      <div className="Explore_LeftBar"> 
-        <nav>
+      <div className="Explore_Barsides"> 
+        <nav className="explore-nav">
           <ul>
-            <li><CustomLink to="MyPosts">My Posts</CustomLink></li>
-            <li><CustomLink to="ExploreFeed">Explore Feed</CustomLink></li>
-            <li><CustomLink to="Favourites">Favourites</CustomLink></li>
-            <li><CustomLink to="Categories">Categories</CustomLink></li>
-            <li><CustomLink to="Notifications">Notification</CustomLink></li>
+            <CustomLink to="MyPosts">My Posts</CustomLink>
+            <CustomLink to="ExploreFeed">Explore Feed</CustomLink>
+            <CustomLink to="Favourites">Favourites</CustomLink>
+            <CustomLink to="Categories">Categories</CustomLink>
+            <CustomLink to="Notifications">Notification</CustomLink>
           </ul>
         </nav>
       </div>
@@ -41,10 +28,15 @@ export default function Explore() {
           <Outlet />
       </div>
 
-      <div className="Explore_RightBar">
-        <p>Trending Tags</p>
-        <p>Daily Themes</p>
-        <p>Challenges</p>
+      <div className="Explore_Barsides">
+        <nav>
+          <ul>
+            <CustomLink to="">Trending</CustomLink>
+            <CustomLink to="">Daily Themes</CustomLink>
+            <CustomLink to="/ChallengesPantunPen">Challenges</CustomLink>
+            <CustomLink to="">Pantun Class</CustomLink>
+          </ul>
+        </nav>
       </div>
     </div>
   

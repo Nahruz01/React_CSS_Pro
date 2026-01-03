@@ -3,7 +3,7 @@ import "../../_styles/PantunRater.css";
 
 export default function PantunRater() {
 
-  const { title, lines } = useOutletContext();
+  const { title, lines, mode } = useOutletContext();
 
   const getLastWord = (line) =>
     line.trim().split(/\s+/).pop()?.replace(/[^\w]/g, "").toLowerCase() || "";
@@ -78,22 +78,45 @@ export default function PantunRater() {
     <div className="PantunRater_Frame">
       <h2>Pantun Evaluator</h2>
 
-      <h3>Title</h3>
-      <p>{title || "No Title Yet"}</p>
+      <div className="PantunRater_Disclaimer">
+        <p>*Note: Evaluator mainly supports 4-line structured pantun only.*</p>
+      </div>
 
-      <h3>Pantun Rules</h3>
-      <p>Stanza Filled: {lines.filter((l) => l.trim() !== "").length}/4</p>
-      <p>Rhyme Scheme: {rhyme}</p>
+      {mode === "freeform" ? (
+        <>
+          <h3>Score</h3>
+          <div className="PantunRater_Disclaimer">
+            <p>
+              Frontend evaluation is not available for freeform pantun.
+              Your full evaluation and rating will be shown in the pantun
+              post details after submission.
+            </p>
+          </div>
+        </>
+      ) : (
+        <>
+          <h3>Title</h3>
+          <p>{title || "No Title Yet"}</p>
 
-      <h3>Syllable Count</h3>
-      {lines.map((line, i) => (
-        <p key={i}>
-          Line {i + 1}: {countSyllables(line)}
-        </p>
-      ))}
+          <h3>Pantun Rules</h3>
+          <p>Stanza Filled: {lines.filter((l) => l.trim() !== "").length}/4</p>
+          <p>Rhyme Scheme: {rhyme}</p>
 
-      <p>Evaluation Review: {"★".repeat(star) + "✰".repeat(5 - star)}</p>
-      <p>Score: {autoScore}</p>
+          <h3>Syllable Count</h3>
+          {lines.map((line, i) => (
+            <p key={i}>
+              Line {i + 1}: {countSyllables(line)}
+            </p>
+          ))}
+
+          <p>Evaluation Review: {"★".repeat(star) + "✰".repeat(5 - star)}</p>
+          <p>Score: {autoScore}</p>
+
+        </>
+      )}
+
+
+
     </div>
   );
 }

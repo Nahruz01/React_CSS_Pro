@@ -21,6 +21,8 @@ export default function Home() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const isAdmin = user?.role === "admin";
+
 
   const [showRegister, setShowRegister] = useState(false);
 
@@ -41,7 +43,7 @@ export default function Home() {
       login({
         user_id: data.user_id,
         username: data.username,
-        role: "user"
+        role: data.role
       });
       alert("Login successful");
     } else {

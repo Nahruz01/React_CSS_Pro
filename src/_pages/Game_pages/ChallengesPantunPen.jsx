@@ -1,18 +1,19 @@
 // src/_pages/PantunPen.jsx
-import CustomLink from "../_component/CustomLink";
+import CustomLink from "../../_component/CustomLink";
+
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 
 
-import "../_styles/PantunPen.css";
-import { useAuth } from "../_context/AuthContext.jsx";
+import "../../_styles/PantunPen.css";
+import { useAuth } from "../../_context/AuthContext.jsx";
 
 import { useTranslation } from "react-i18next";
 
 
-export default function PantunPen({ editMode = false }) {
+export default function ChallengesPantunPen({ editMode = false }) {
   const { user } = useAuth();
   const { postId } = useParams();
 
@@ -87,73 +88,64 @@ export default function PantunPen({ editMode = false }) {
     setTag(value);
   }
 
-  const handlePantunSubmit = async () => {
-    if (!user) return alert("Please log in");
+const handlePantunSubmit = async () => {
+  if (!user) return alert("Please log in");
 
-    // Prepare lines based on mode
-    let finalLines = [];
-    if (mode === "structured") {
-      finalLines = lines.map(l => l.trim()).filter(l => l !== "");
-      if (finalLines.length === 0) return alert("Pantun must contain at least 1 line.");
-    } else {
-      finalLines = freeformText.split("\n").map(l => l.trim()).filter(l => l !== "");
-      if (finalLines.length === 0) return alert("Pantun must contain at least 1 line.");
-    }
+  // Prepare lines based on mode
+  let finalLines = [];
+  if (mode === "structured") {
+    finalLines = lines.map(l => l.trim()).filter(l => l !== "");
+    if (finalLines.length === 0) return alert("Pantun must contain at least 1 line.");
+  } else {
+    finalLines = freeformText.split("\n").map(l => l.trim()).filter(l => l !== "");
+    if (finalLines.length === 0) return alert("Pantun must contain at least 1 line.");
+  }
 
-    const pantunData = {
-      title,
-      tag_ids: tag ? [tag] : [],
-      lines: finalLines,
-      caption,
-      user_id: user.user_id
-    };
-
-    console.log("OUTGOING DATA:", pantunData);
-
-    try {
-      const url = editMode 
-        ? `http://127.0.0.1:5000/posts/${postId}`
-        : "http://127.0.0.1:5000/add_pantun";
-
-      const method = editMode ? "PUT" : "POST";
-
-      const response = await fetch(url, {
-        method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(pantunData),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) return alert("Error: " + (result.error || "Unknown error"));
-
-      // Use returned pantun_id from backend
-      const pantunId = result.pantun_id;
-      if (!pantunId) {
-        console.warn("No pantun_id returned from backend; cannot fetch rating.");
-        return alert("Pantun submitted, but rating could not be fetched.");
-      }
-
-      // Fetch pantun rating
-      const ratingResponse = await fetch(`http://127.0.0.1:5000/pantun/${pantunId}/rating`);
-      const ratingData = await ratingResponse.json();
-      setPantunRating(ratingData);
-
-      alert("Pantun submitted successfully!");
-    } catch (err) {
-      console.error(err);
-      alert("Pantun submission failed");
-    }
+  const pantunData = {
+    title,
+    tag_ids: tag ? [tag] : [],
+    lines: finalLines,
+    caption,
+    user_id: user.user_id
   };
 
-  const effectiveLines =
-  mode === "structured"
-    ? lines.filter(l => l.trim() !== "")
-    : freeformText
-        .split("\n")
-        .map(l => l.trim())
-        .filter(l => l !== "");
+  console.log("OUTGOING DATA:", pantunData);
 
+  try {
+    const url = editMode 
+      ? `http://127.0.0.1:5000/posts/${postId}`
+      : "http://127.0.0.1:5000/add_pantun";
+
+    const method = editMode ? "PUT" : "POST";
+
+    const response = await fetch(url, {
+      method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pantunData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) return alert("Error: " + (result.error || "Unknown error"));
+
+    // Use returned pantun_id from backend
+    const pantunId = result.pantun_id;
+    if (!pantunId) {
+      console.warn("No pantun_id returned from backend; cannot fetch rating.");
+      return alert("Pantun submitted, but rating could not be fetched.");
+    }
+
+    // Fetch pantun rating
+    const ratingResponse = await fetch(`http://127.0.0.1:5000/pantun/${pantunId}/rating`);
+    const ratingData = await ratingResponse.json();
+    setPantunRating(ratingData);
+
+    alert("Pantun submitted successfully!");
+  } catch (err) {
+    console.error(err);
+    alert("Pantun submission failed");
+  }
+};
 
   return (
     <>
@@ -234,7 +226,7 @@ export default function PantunPen({ editMode = false }) {
 
     
           <button type="button" onClick={handlePantunSubmit}>
-            {editMode ? "Edit Pantun" : "Submit Pantun"}
+            {editMode ? "Edit Challenge" : "Submit Challenge"}
           </button>
 
 
@@ -242,8 +234,9 @@ export default function PantunPen({ editMode = false }) {
 
 
         <div className="PantunPen_SideNav">
-        <nav className="pantun-nav">
-          <ul>
+        <nav>
+          <ul className= "nav pantun-nav">
+          <CustomLink to="Challenge_Info">Challenge</CustomLink>
           <CustomLink to="Rater">Rater</CustomLink>
           <CustomLink to="Rhymer">Rhymer</CustomLink>
           <CustomLink to="Class">Guidelines</CustomLink>

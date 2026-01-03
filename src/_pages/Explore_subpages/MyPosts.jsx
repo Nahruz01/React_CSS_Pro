@@ -3,10 +3,16 @@ import { useAuth } from "../../_context/AuthContext.jsx";
 
 import ConfirmModal from "../../_component/ConfirmModal.jsx";
 
+import { useNavigate } from "react-router-dom";
+
+
+
 //import "../../_styles/Explore_MyPosts.css";
 
 export default function MyPosts() {
   const { user } = useAuth();
+  const navigate = useNavigate();
+
   const [pantuns, setPantuns] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,12 +27,11 @@ export default function MyPosts() {
     }
 
     setLoading(true);
-    
-    // Fetch user's pantuns
+
     fetch(`http://127.0.0.1:5000/pantuns/mine?user_id=${user.user_id}`)
       .then(res => res.json())
       .then(data => {
-        console.log("MyPosts response:", data); // <-- ADD THIS
+        console.log("MyPosts response:", data);
         setPantuns(Array.isArray(data) ? data : []);
       })
       .catch(err => {
@@ -37,6 +42,9 @@ export default function MyPosts() {
         setLoading(false);
       });
   }, [user?.user_id]);
+
+
+  
 
 
   if (!user) return <p>Please log in to see your posts.</p>;
@@ -122,15 +130,26 @@ export default function MyPosts() {
             </select>
 
           </div>
-            
           
           {/* <p><strong>{p.tags}</strong></p> */}
+          {p.caption && (
+            <p className="post-caption">{p.caption}</p>
+          )}
+          
           <div className="Post_Content">
-            <p>{p.line1}</p>
-            <p>{p.line2}</p>
-            <p>{p.line3}</p>
-            <p>{p.line4}</p>
+            {Array.isArray(p.lines) &&
+              p.lines.map((line, index) => (
+                <p key={index}>
+                  {typeof line === "string" ? line : line.line_text}
+                </p>
+              ))}
+
+            {!p.lines && Array.isArray(p.pantun_lines) &&
+              p.pantun_lines.map((line, index) => (
+                <p key={index}>{line.line_text}</p>
+              ))}
           </div>
+
 
           <div className="Post_Interactables_Info">
             <span className="metric">
@@ -153,7 +172,11 @@ export default function MyPosts() {
 
           <div className="Post_Buttons">
             {/* Edit Button */}
-            <button>Edit Post</button>
+            <button
+              onClick={() => navigate(`/pantunpen/${p.post_id}/edit`)}
+            >
+              Edit Post
+            </button>
 
             {/* Delete Button */}
             <button

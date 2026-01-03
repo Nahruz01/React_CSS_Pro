@@ -13,9 +13,9 @@ body {
 }
 
 .nav {
-  position: sticky;   /* or fixed */
-  top: 0;             /* stick to top */
-  z-index: 1000;      /* above other content */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   background-color: #315293;
   color: white;
@@ -25,6 +25,7 @@ body {
   gap: 2rem;
   padding: 0 1rem;
 }
+
 
 .i-pantun-title {
   font-size: 2.5rem;
@@ -49,16 +50,23 @@ body {
 
 /* Add this at the bottom of src/index.css */
 
-.nav li.active {
-  background-color: #2082a8; /* “sunk” color for the current page */
-  border-radius: 0.25rem; /* optional for rounded edges */
+.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-.nav li:hover {
-  background-color: #777;
+.main-nav li.active {
+  background-color: #2082a8;
+  border-radius: 0.25rem;
 }
+
+.main-nav li:hover {
+  background-color: #56bac3;
+}
+
 
 /* ============================= */
 /* Disabled / Locked Navbar Item */

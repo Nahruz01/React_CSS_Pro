@@ -88,17 +88,22 @@ export default function ExploreFeed() {
       {/* Only Backend Reading/No Writing and No Feedback just yet */}
       {pantuns.map(p => (
         <div key={p.pantun_id} className="Post_Card">
-        <div className="Post_Header">
-          <h3>{p.title}</h3>
-          <span className="Post_Username">{p.username || "Anonymous"}</span>
-        </div>
-          <p><strong>{p.tags}</strong></p>
-          <div className="Post_Content">
-            <p>{p.line1}</p>
-            <p>{p.line2}</p>
-            <p>{p.line3}</p>
-            <p>{p.line4}</p>
+          <div className="Post_Header">
+            <h3>{p.title}</h3>
+            <span className="Post_Username">{p.username || "Anonymous"}</span>
+            
           </div>
+          <p><strong>{p.tags}</strong></p>
+          {p.caption && (
+            <p className="post-caption">{p.caption}</p>
+          )}
+
+          <div className="Post_Content">
+            {Array.isArray(p.lines) && p.lines.map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+          </div>
+
 
           <div className="Post_Buttons">
             {/* View Details Button */}

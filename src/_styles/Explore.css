@@ -8,24 +8,24 @@
     color: rgb(0, 0, 0);
 }
 
-.Explore_LeftBar {
+.Explore_Barsides {
     flex: 1;
     padding: 0.5rem;
     border-radius: 6px;
 }
 
-.Explore_LeftBar ul {
+.Explore_Barsides  ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.Explore_LeftBar li {
+.Explore_Barsides li {
   margin-bottom: 0.5rem;
 }
 
 /* Style the actual link as a button */
-.Explore_LeftBar a {
+.Explore_Barsides a {
   display: block;
   padding: 0.75rem 1rem;
   background-color: #ffffff;
@@ -38,14 +38,20 @@
 }
 
 /* Hover effect */
-.Explore_LeftBar a:hover {
+.Explore_Barsides a:hover {
   background-color: #81c784;
   color: white;
   transform: translateX(4px);
 }
 
 /* Active / selected page (if CustomLink adds .active) */
-.Explore_LeftBar a.active {
+.Explore_Barsides a.active {
+  background-color: #66bb6a;
+  color: white;
+  font-weight: bold;
+}
+
+.Explore_Barsides li.active a {
   background-color: #66bb6a;
   color: white;
   font-weight: bold;
@@ -61,11 +67,6 @@
     
     overflow-y: auto;     /* scrollable */
     max-height: 100vh;    /* prevent expanding */
-}
-.Explore_RightBar {
-    flex: 1;
-    padding: 0.5rem;
-    border-radius: 6px;
 }
 
 .Post_Card {
@@ -163,5 +164,6 @@
   font-weight: 600;
   color: #333;
 }
+
 
 
