@@ -1,0 +1,81 @@
+CHECK INSTALLATION
+node -v
+/////////////////
+
+
+npm create vite@latest frontend-pro-i-pantun
+////////
+
+Pick:
+framework: React
+variant: Javascript
+rolldown: No
+/////////////
+
+npm install tailwindcss @tailwindcss/cli
+////////////
+
+#/src/index.css
+@import "tailwindcss";
+/////////////
+
+
+cd into project folder frontend-pro-i-pantun
+run npm dev
+
+or just keep opening the file directly to frontend-pro-i-pantun
+///////////
+
+
+PATHING______________________________
+
+✅ Why ../ is used in imports
+
+../ means:
+
+“Go UP ONE folder level from the current file.”
+
+./ means:
+
+“Stay in the same folder.”
+
+../../ means:
+
+“Go UP TWO folder levels.”
+
+📌 Example based on your structure
+
+You have this file:
+
+src/
+ ├── _component/
+ │      ├── NavBar.jsx
+ │      ├── CustomLink.jsx
+ │      └── PantunPen.jsx   ← (your file)
+ ├── _styles/
+ │      └── PantunPen.css
+
+
+Your file is inside:
+
+src/_component/
+
+
+Your CSS file is inside:
+
+src/_styles/
+
+
+So from PantunPen.jsx → to PantunPen.css:
+
+Step-by-step path:
+
+.. → move UP from _component to src
+
+_styles/ → enter the styles folder
+
+PantunPen.css → the file itself
+
+Which becomes:
+
+../_styles/PantunPen.css

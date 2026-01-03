@@ -1,0 +1,13 @@
+a {
+  color: rgb(86, 111, 220);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.GuideFrame {
+    padding: 2%;
+    background-color: rgb(60, 213, 172);
+}

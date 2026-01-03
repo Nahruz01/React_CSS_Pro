@@ -1,0 +1,88 @@
+git init
+
+
+git add .
+git commit -m "Initial commit: React_CSS_Pro setup"
+
+git remote add origin https://github.com/Nahruz01/React_CSS_Pro.git
+git branch -M main
+git push -u origin main
+
+
+git branch
+git checkout -b feature/router
+
+
+
+git add .
+git commit -m "Setup basic React routing structure"
+
+
+git push -u origin feature/router_test
+
+git checkout feature/router_test
+
+
+1️⃣ Repository setup
+Command	What it does
+git init	Initializes a new Git repository in the current folder. Creates a .git folder to track history.
+git clone <repo_url>	Makes a local copy of a remote repository. Equivalent to downloading it.
+2️⃣ Staging & committing changes
+Command	What it does
+git add <file>	Adds a specific file to the staging area (preparing it to commit).
+git add .	Adds all changed files in the folder to staging.
+git commit -m "message"	Creates a commit with all staged changes and a message describing the change.
+git status	Shows current branch, staged files, unstaged changes, and untracked files.
+git diff	Shows line-by-line differences between your working files and last commit.
+git log	Shows the commit history of the current branch.
+3️⃣ Working with branches
+Command	What it does
+git branch	Lists local branches. Current branch marked with *.
+git branch -r	Lists remote branches.
+git branch -a	Lists all branches (local + remote).
+git branch <branch_name>	Creates a new branch locally.
+git checkout <branch_name>	Switches to an existing branch.
+git switch <branch_name>	Modern alternative to checkout for switching branches.
+git checkout -b <branch_name>	Creates a new branch and switches to it immediately.
+git merge <branch_name>	Merges the specified branch into the current branch.
+git branch -d <branch_name>	Deletes a local branch (only if merged).
+git branch -D <branch_name>	Force deletes a branch, even if unmerged.
+4️⃣ Remote repositories
+Command	What it does
+git remote add <name> <url>	Adds a remote repository with a name (origin is common).
+git remote -v	Lists remote repositories and URLs.
+git push	Pushes commits from your local branch to the remote branch.
+git push -u origin <branch>	Pushes the branch and sets upstream so future pushes/pulls are automatic.
+git pull	Pulls latest changes from the remote branch and merges into your current branch.
+git fetch	Downloads remote changes without merging them (safer than pull).
+5️⃣ Undo & reset
+Command	What it does
+git reset <file>	Unstages a file (removes it from staging).
+git reset --hard	Dangerous: resets all changes in working directory to last commit.
+git revert <commit_hash>	Creates a new commit that undoes a specific commit. Safer than reset if already pushed.
+git restore <file>	Restores a file to the state of the last commit.
+6️⃣ Inspecting & comparing
+Command	What it does
+git log	Show commit history.
+git log --oneline	Short version of commit history.
+git show <commit_hash>	Show details of a specific commit.
+git diff	Show unstaged changes.
+git diff --staged	Show staged changes (before committing).
+git blame <file>	Shows who last changed each line of a file.
+7️⃣ Tagging & versions
+Command	What it does
+git tag <tag_name>	Adds a tag to the current commit (e.g., v1.0).
+git tag -a <tag_name> -m "message"	Annotated tag with a message.
+git push origin <tag_name>	Pushes a specific tag to the remote.
+git push --tags	Pushes all tags to the remote.
+8️⃣ Stashing (temporary saving)
+Command	What it does
+git stash	Saves changes temporarily and clears working directory.
+git stash pop	Restores the most recent stash and removes it from the stash list.
+git stash list	Shows all saved stashes.
+9️⃣ Configuration & info
+Command	What it does
+git config --global user.name "Name"	Sets your Git username globally.
+git config --global user.email "email@example.com"	Sets your Git email globally.
+git config core.autocrlf true	Converts line endings automatically (Windows).
+git remote show origin	Shows detailed info about the remote reposito

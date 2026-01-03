@@ -13,6 +13,10 @@ body {
 }
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   background-color: #315293;
   color: white;
   display: flex;
@@ -21,6 +25,7 @@ body {
   gap: 2rem;
   padding: 0 1rem;
 }
+
 
 .i-pantun-title {
   font-size: 2.5rem;
@@ -43,11 +48,46 @@ body {
   padding: .25rem;
 }
 
-.nav li:active {
-  background-color: #555;
+/* Add this at the bottom of src/index.css */
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
-.nav li:hover {
-  background-color: #777;
+.main-nav li.active {
+  background-color: #2082a8;
+  border-radius: 0.25rem;
+}
+
+.main-nav li:hover {
+  background-color: #56bac3;
+}
+
+
+/* ============================= */
+/* Disabled / Locked Navbar Item */
+/* ============================= */
+
+/* Normalize disabled nav items to match links */
+.nav-item span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+/* Disabled state */
+.nav-disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Prevent hover highlight on disabled items */
+.nav-disabled:hover {
+  background-color: transparent;
 }
 

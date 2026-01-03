@@ -1,0 +1,112 @@
+
+.PantunPen_Frame {
+    background-color: #c2ecf2;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    padding: 0.5rem;
+    flex: 5;
+    
+    color: rgb(0, 0, 0);
+}
+.PantunPen_Main {
+    background-color: rgb(162, 223, 202);
+    flex: 4;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.PantunPen_Main input,
+.PantunPen_Main select {
+    width: 95%;       /* Stretch close to full container width */
+    box-sizing: border-box; /* Include padding/border in width */
+    margin: 0.25rem 0; /* Keep vertical spacing */
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: whitesmoke;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.PantunPen_Main button {
+    width: auto;
+    background-color: whitesmoke;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 1%;
+}
+
+.PantunPen_SideNav {
+    flex: 3;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.PantunPen_SideNav nav {
+  background-color: #315293;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+  border-radius: 6px;
+}
+
+.PantunPen_SideNav nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.PantunPen_SideNav nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+
+
+/* Pantun Navbar */
+.pantun-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.pantun-nav li.active {
+  background-color: #2082a8;
+  border-radius: 0.25rem;
+}
+
+.pantun-nav li:hover {
+  background-color: #56bac3;
+}
+
+
+
+.pantun-rater-card {
+    background-color: aquamarine;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.PantunPen_ModeSwitch {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.PantunPen_Freeform {
+  width: 100%;
+  resize: vertical;
+}
