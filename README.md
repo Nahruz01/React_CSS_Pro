@@ -3,8 +3,8 @@ Status: Final Year Project (Ongoing / Academic Project)
 This project is developed as part of a university Final Year Project.
 Features are implemented incrementally and reflect academic scope.
 
-This repository is only for the frontend aspect of I-Pantun, the backend repository can be found in this same profile.
-- This repository are created with the help of AI, and any semblence of the original code is now indistinguishible
+This repository contains the frontend implementation of I-Pantun.
+The backend implementation is available in a separate repository on this profile.
 
 ##########
 
