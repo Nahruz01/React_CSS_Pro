@@ -4,8 +4,6 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-
-
 import "../_styles/PantunPen.css";
 import { useAuth } from "../_context/AuthContext.jsx";
 
@@ -28,7 +26,6 @@ export default function PantunPen({ editMode = false }) {
 
 
   const [pantunRating, setPantunRating] = useState(null);
-
   const [rhymerInput, setRhymerInput] = useState("");
 
 
@@ -175,7 +172,7 @@ export default function PantunPen({ editMode = false }) {
               Pantun Structure
             </label>
 
-            <label>
+            <label> 
               <input
                 type="radio"
                 name="pantunMode"
