@@ -1,16 +1,20 @@
-# React + Vite
+Status: Final Year Project (Ongoing / Academic Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is developed as part of a university Final Year Project.
+Features are implemented incrementally and reflect academic scope.
 
-Currently, two official plugins are available:
+This repository is only for the frontend aspect of I-Pantun, the backend repository can be found in this same profile.
+- This repository are created with the help of AI, and any semblence of the original code is now indistinguishible
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##########
+I-Pantun is a web-based education platform that aim to make pantun creation easy, rewarding and fun. 
+Main features:
+1. Pantun Evaluator, detect and rate the 'correctness' of pantun user created in real-time based on pantun rules.
+2. Community Space, enable user to share and give feedback to other user's pantun posts.
+3. Gamification Features, XP point, streak and quizzes are added to increase player engagement.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+(Future Work)
+- Due to academic scope and time limitation, addtional work on I-Pantun is halted such as:
+- Machine Learning Model focusing on NLP to enhance pantun evaluator that are researched but not implemented: 'pembayang' detection through semantic and weightage, sentimenet analysis, etc.
+- Modern community space features
+- More gamification features, real-time pantun tournament, pantun duel and etc.
